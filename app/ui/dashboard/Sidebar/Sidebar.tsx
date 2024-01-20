@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -11,10 +12,9 @@ import {
   MdLogout,
 } from 'react-icons/md';
 
-import styles from './sidebar.module.css';
+import styles from './Sidebar.module.css';
 import { TMenuItem, TMenuLink } from './types';
 import MenuLink from './MenuLink/MenuLink';
-
 
 const menuItems: TMenuItem[] = [
   {
@@ -82,16 +82,33 @@ const menuItems: TMenuItem[] = [
 const Sidebar = () => {
   return (
     <div className={styles.container}>
-      <ul>
+      <div className={styles.user}>
+        <Image
+          className={styles.userImage}
+          src={'/noavatar.png'}
+          alt=''
+          width='50'
+          height='50'
+        />
+        <div className={styles.userDetail}>
+          <span className={styles.username}>Jhon Doe</span>
+          <span className={styles.userTitle}>Administrator</span>
+        </div>
+      </div>
+      <ul className={styles.list}>
         {menuItems.map((item: TMenuItem) => (
           <li key={item.title}>
             <span>{item.title}</span>
-            {item.list.map((linkItem: TMenuLink) => 
+            {item.list.map((linkItem: TMenuLink) => (
               <MenuLink item={linkItem} key={linkItem.title} />
-            )}
+            ))}
           </li>
         ))}
       </ul>
+      <button className={styles.logout}>
+        <MdLogout />
+        Logout
+      </button>
     </div>
   );
 };

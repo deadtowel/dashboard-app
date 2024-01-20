@@ -12,7 +12,7 @@ type MenuLinkProps = {
 };
 
 const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <Link
