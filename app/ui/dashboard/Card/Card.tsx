@@ -3,7 +3,7 @@ import styles from './Card.module.css';
 
 const item = {
   title: 'Sales',
-  number: '$10327',
+  number: '$10,327',
   change: 12.54,
 };
 
