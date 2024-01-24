@@ -80,9 +80,11 @@ const UsersPage = () => {
             <td>active</td>
             <td>
               <div className={styles.buttons}>
-                <button className={`${styles.button} ${styles.view}`}>
-                  View
-                </button>
+                <Link href={`/dashboard/users/id`}>
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
                 <form>
                   <input type='hidden' name='id' />
                   <button className={`${styles.button} ${styles.delete}`}>
